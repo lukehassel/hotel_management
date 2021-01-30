@@ -63,3 +63,4 @@ if __name__ == "__main__":
     main.pack(side="top", fill="both", expand=True)
     root.wm_geometry("400x400")
     root.mainloop()
+    print("ich bin krass")
