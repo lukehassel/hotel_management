@@ -21,7 +21,7 @@ class StartPage(tk.Frame):
         b2 = tk.Button(buttonframe, text="RoomAdministration")
         b3 = tk.Button(buttonframe, text="CustomerAdministrationPage")
 
-        b1.grid(row=0, column=1, padx='10', pady='30', sticky='ew')
+        b1.grid(row=0, column=2, padx='10', pady='30', sticky='ew')
         b2.grid(row=1, column=2, padx='10', pady='30', sticky='ew')
         b3.grid(row=2, column=2, padx='10', pady='30', sticky='ew')
 
