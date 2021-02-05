@@ -4,11 +4,14 @@ from ui.pages.create_customer_page import CreateCustomerPage
 from ui.pages.room_administration_page import RoomAdministrationPage
 from ui.pages.customer_administration_page import CustomerAdministrationPage
 
+def room_admin():
+    return RoomAdministrationPage()
+
 class StartPage(tk.Frame):
     def __init__(self, *args, **kwargs):
         tk.Frame.__init__(self, *args, **kwargs)
         #p1 = CreateCustomerPage(self)
-        p2 = RoomAdministrationPage(self)
+        #p2 = RoomAdministrationPage(self)
         w = tk.Label(self, text="Trash-Hotel Bearbeitungs_Zentrum", bg = "red")
         w.pack()
 
@@ -18,7 +21,7 @@ class StartPage(tk.Frame):
         container.pack(side="top", fill="both", expand=True)
 
         b1 = tk.Button(buttonframe, text="CustomerPage")
-        b2 = tk.Button(buttonframe, text="RoomAdministration")
+        b2 = tk.Button(buttonframe, text="RoomAdministration", command=room_admin)
         b3 = tk.Button(buttonframe, text="CustomerAdministrationPage")
 
         b1.grid(row=0, column=2, padx='10', pady='30', sticky='ew')

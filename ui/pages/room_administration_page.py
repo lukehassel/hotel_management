@@ -8,6 +8,11 @@ from ui.pages.page import Page
 class RoomAdministrationPage(Page):
 
     def __init__(self, *args, **kwargs):
+        root = tk.Tk()
+        root.title("HI")
+        root.wm_geometry("400x400")
+        root.mainloop()
+
         Page.__init__(self, *args, **kwargs)
         label = tk.Label(self, text="This is page 1")
         # label.pack(side="top", fill="both", expand=True)
