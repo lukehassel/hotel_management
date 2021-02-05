@@ -19,15 +19,16 @@ class CreateCustomerPage(Page):
         label = tk.Label(self, text="This is page 1")
         # label.pack(side="top", fill="both", expand=True)
 
-        self.frame = tk.Frame(self).pack()
+        # self.frame = tk.Frame(self).pack()
 
         self.create_input_fields()
         self.create_radios()
         self.create_btn()
 
-        title = tk.Label(self.frame,
+        title = tk.Label(self,
                          text="Neuer Kunde")
         title.config(font=("Courier", 44))
+        # title.pack(side="top", fill="both", expand=True)
         title.place(x=20, y=35)
 
     def create_btn(self):
@@ -37,7 +38,7 @@ class CreateCustomerPage(Page):
         btnFrame.pack(side="bottom")
 
     def create_radios(self):
-        radioFrame = tk.Frame(self.frame, borderwidth=40)
+        radioFrame = tk.Frame(self, borderwidth=40)
 
         var = tk.IntVar()
         rad1 = tk.Radiobutton(radioFrame, text='EinzelZimmer', value=1, command=lambda: self.s1())
@@ -63,7 +64,7 @@ class CreateCustomerPage(Page):
         self.roomType = Suite()
 
     def create_input_fields(self):
-        inputFrame = tk.Frame(self.frame)
+        inputFrame = tk.Frame(self)
 
         tk.Label(inputFrame,
                  text="Name").grid(sticky="W", column=1, row=0)

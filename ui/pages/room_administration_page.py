@@ -12,21 +12,28 @@ class RoomAdministrationPage(Page):
         label = tk.Label(self, text="This is page 1")
         # label.pack(side="top", fill="both", expand=True)
 
-        self.frame = tk.Frame(self).pack()
+        #self.frame = tk.Frame(self).pack()
 
-        ReceptionUseCase().createReservation("nasdf", 12, SingleRoom())
-        ReceptionUseCase().createReservation("nasdf", 12, SingleRoom())
-        ReceptionUseCase().createReservation("nasdf", 12, SingleRoom())
+        # ReceptionUseCase().createReservation("nasdf", 12, SingleRoom())
+        # ReceptionUseCase().createReservation("nasdf", 12, SingleRoom())
+        # ReceptionUseCase().createReservation("nasdf", 12, SingleRoom())
+
+        print("HELLO")
 
         self.create_list()
 
-        title = tk.Label(self.frame,
+        title = tk.Label(self,
                          text="Zimmer\nVerwaltung")
         title.config(font=("Courier", 44))
         title.place(x=20, y=35)
 
+    def refresh(self):
+        self.create_list()
+
     def create_list(self):
-        list_widget = tk.Listbox(self.frame)
+        list_widget = tk.Listbox(self)
+
+        list_widget.delete(0, 'end')
 
         for i, customer in enumerate(ReceptionUseCase().reservations):
 
