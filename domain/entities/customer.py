@@ -7,6 +7,12 @@ class Customer:
     room = Room()
     hotel_visits = 0
 
+    def getRoom(self):
+        return self.room
+
+    def setRoom(self, room):
+        self.room = room
+
     def setCustomerId(self, customerId: str):
         self.customerId = customerId
 

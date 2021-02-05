@@ -7,7 +7,7 @@ from ui.pages.customer_administration_page import CustomerAdministrationPage
 class StartPage(tk.Frame):
     def __init__(self, *args, **kwargs):
         tk.Frame.__init__(self, *args, **kwargs)
-        p1 = CreateCustomerPage(self)
+        #p1 = CreateCustomerPage(self)
         p2 = RoomAdministrationPage(self)
         w = tk.Label(self, text="Trash-Hotel Bearbeitungs_Zentrum", bg = "red")
         w.pack()
