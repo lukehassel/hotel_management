@@ -26,7 +26,7 @@ class ReceptionUseCase:
         if isinstance(room_type, type(Suite())):
             room = Suite()
 
-        room.setKey(True)
+        room.setKey(False)
         room.setRoomNumber(random.randint(1, 300))
         customer.setRoom(room)
 

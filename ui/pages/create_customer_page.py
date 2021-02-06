@@ -12,7 +12,8 @@ class CreateCustomerPage(Page):
 
     def show_entry_fields(self):
         print("Dein Name ist %s" % (self.e1.get()))
-        ReceptionUseCase().createReservation(self.e1.get(), self.e2.get(), self.roomType)
+        if len(self.e1.get()) >0 and len(self.e2.get()) > 0 and str(self.e2.get()).isdigit() and not self.roomType is None:
+            ReceptionUseCase().createReservation(self.e1.get(), self.e2.get(), self.roomType)
 
     def __init__(self, *args, **kwargs):
         Page.__init__(self, *args, **kwargs)
@@ -68,12 +69,12 @@ class CreateCustomerPage(Page):
 
         tk.Label(inputFrame,
                  text="Name").grid(sticky="W", column=1, row=0)
-        self.e1 = tk.Entry(inputFrame)
+        self.e1 = tk.Entry(inputFrame, width=7)
         self.e1.grid(sticky="W", column=2, row=0)
 
         tk.Label(inputFrame,
                  text="Hotel Besuche").grid(sticky="W", column=1, row=1)
-        self.e2 = tk.Entry(inputFrame)
+        self.e2 = tk.Entry(inputFrame, width=3)
         self.e2.grid(sticky="W", column=2, row=1)
 
         inputFrame.place(x=20, y=200)

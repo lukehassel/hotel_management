@@ -7,10 +7,10 @@ from ui.pages.start_page import StartPage
 
 if __name__ == "__main__":
     root = tk.Tk()
-    root.title("HI")
+    root.title("Trash Hotel Administration System")
     main = StartPage(root)
     main.pack(side="top", fill="both", expand=True)
-    root.wm_geometry("400x400")
+    root.wm_geometry("450x400")
     root.mainloop()
 
 

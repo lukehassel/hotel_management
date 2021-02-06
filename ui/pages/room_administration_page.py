@@ -38,11 +38,11 @@ class RoomAdministrationPage(Page):
         for i, customer in enumerate(ReceptionUseCase().reservations):
 
             if not customer.getRoom().getKey():
-                key = "Schlüssel noch im Hotel"
+                key = "Schlüssel im Hotel"
             else:
                 key = "Schlüssel beim besitzer"
 
             list_widget.insert(i, str(customer.getCustomerId()) + "   " + key + "   " + "Raum " + str(
                 customer.getRoom().getRoomNumber()))
 
-        list_widget.place(x=20, y=160, width=300)
+        list_widget.place(x=20, y=160, width=400)
