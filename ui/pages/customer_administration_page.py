@@ -1,3 +1,6 @@
+__author__ = "6668734, Just, 7340644, Hassel"
+__email__ = "s6668734@stud.uni-frankfurt.de, s7340644@rz.uni-frankfurt.de"
+
 import tkinter as tk
 
 from domain.usecase.reception_usecase import ReceptionUseCase
@@ -6,16 +9,15 @@ from ui.pages.page import Page
 
 class CustomerAdministrationPage(Page):
 
+    """
+    This class creates the Page where the reception can view a customer overview.
+    """
+
     def __init__(self, *args, **kwargs):
+        """
+                This method creates the page.
+        """
         Page.__init__(self, *args, **kwargs)
-        label = tk.Label(self, text="This is page 1")
-        # label.pack(side="top", fill="both", expand=True)
-
-        # self.frame = tk.Frame(self).pack()
-
-        # ReceptionUseCase().createReservation("nasdf", 12, SingleRoom())
-        # ReceptionUseCase().createReservation("nasdf", 12, SingleRoom())
-        # ReceptionUseCase().createReservation("nasdf", 12, SingleRoom())
 
         self.create_list()
 
@@ -25,10 +27,16 @@ class CustomerAdministrationPage(Page):
         title.place(x=20, y=35)
 
     def refresh(self):
+        """
+        This method will refresh the page.
+        """
         self.list_widget.delete(0,'end')
         self.create_list()
 
     def create_list(self):
+        """
+        This method will create the ListBox of the page.
+        """
         self.list_widget = tk.Listbox(self)
 
         for i, customer in enumerate(ReceptionUseCase().reservations):

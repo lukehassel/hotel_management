@@ -1,3 +1,6 @@
+__author__ = "6668734, Just, 7340644, Hassel"
+__email__ = "s6668734@stud.uni-frankfurt.de, s7340644@rz.uni-frankfurt.de"
+
 import tkinter as tk
 
 from ui.pages.create_customer_page import CreateCustomerPage
@@ -7,7 +10,14 @@ from ui.pages.room_administration_page import RoomAdministrationPage
 
 
 class StartPage(tk.Frame):
+    """
+    This class creates the Page where all the other pages are called from.
+    """
+
     def __init__(self, *args, **kwargs):
+        """
+        This method creates the page.
+        """
         tk.Frame.__init__(self, *args, **kwargs)
         p1 = CreateCustomerPage(self)
         self.p2 = CustomerAdministrationPage(self)
@@ -36,12 +46,16 @@ class StartPage(tk.Frame):
 
         p1.show()
 
-    def btn1(self):
-        pass
     def btn2(self):
+        """
+        A callback for the button btn2.
+        """
         self.p2.refresh()
         self.p2.lift()
 
     def btn3(self):
+        """
+        A callback for the button btn3.
+        """
         self.p3.refresh()
         self.p3.lift()

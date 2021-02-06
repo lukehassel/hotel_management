@@ -1,9 +1,13 @@
+__author__ = "6668734, Just, 7340644, Hassel"
+__email__ = "s6668734@stud.uni-frankfurt.de, s7340644@rz.uni-frankfurt.de"
+
 import tkinter as tk
 
-from ui.pages.create_customer_page import CreateCustomerPage
-from ui.pages.customer_administration_page import CustomerAdministrationPage
-from ui.pages.room_administration_page import RoomAdministrationPage
 from ui.pages.start_page import StartPage
+
+"""
+    This module starts the program and sets up the window of the ui.
+"""
 
 if __name__ == "__main__":
     root = tk.Tk()

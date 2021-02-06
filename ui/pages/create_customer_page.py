@@ -1,3 +1,6 @@
+__author__ = "6668734, Just, 7340644, Hassel"
+__email__ = "s6668734@stud.uni-frankfurt.de, s7340644@rz.uni-frankfurt.de"
+
 import tkinter as tk
 
 from domain.entities.room.double_room import DoubleRoom
@@ -8,14 +11,25 @@ from ui.pages.page import Page
 
 
 class CreateCustomerPage(Page):
+
+    """
+    This class creates the Page where the reception can create the new customers.
+    """
+
     roomType = None
 
     def show_entry_fields(self):
+        """
+            Is called when a new customer is created.
+        """
         print("Dein Name ist %s" % (self.e1.get()))
         if len(self.e1.get()) >0 and len(self.e2.get()) > 0 and str(self.e2.get()).isdigit() and not self.roomType is None:
             ReceptionUseCase().createReservation(self.e1.get(), self.e2.get(), self.roomType)
 
     def __init__(self, *args, **kwargs):
+        """
+            This method creates the page.
+        """
         Page.__init__(self, *args, **kwargs)
         label = tk.Label(self, text="This is page 1")
         # label.pack(side="top", fill="both", expand=True)
@@ -33,12 +47,18 @@ class CreateCustomerPage(Page):
         title.place(x=20, y=35)
 
     def create_btn(self):
+        """
+            This method creates the buttons of the page.
+        """
         btnFrame = tk.Frame(self, borderwidth=20)
         tk.Button(btnFrame,
                   text='Okay', command=self.show_entry_fields).grid(column=1, row=0)
         btnFrame.pack(side="bottom")
 
     def create_radios(self):
+        """
+            This method creates the radio buttons of the page.
+        """
         radioFrame = tk.Frame(self, borderwidth=40)
 
         var = tk.IntVar()
@@ -55,16 +75,27 @@ class CreateCustomerPage(Page):
         radioFrame.place(x=200, y=175)
 
     def s1(self):
-        print("asdf")
+        """
+            Callback of a radio button.
+        """
         self.roomType = SingleRoom()
 
     def s2(self):
+        """
+            Callback of a radio button.
+        """
         self.roomType = DoubleRoom()
 
     def s3(self):
+        """
+            Callback of a radio button.
+        """
         self.roomType = Suite()
 
     def create_input_fields(self):
+        """
+            The method creates the input fields.
+        """
         inputFrame = tk.Frame(self)
 
         tk.Label(inputFrame,

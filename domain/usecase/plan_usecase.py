@@ -1,3 +1,6 @@
+__author__ = "6668734, Just, 7340644, Hassel"
+__email__ = "s6668734@stud.uni-frankfurt.de, s7340644@rz.uni-frankfurt.de"
+
 """
 This module contains functions which are called upon by the hotel_management project
 """
