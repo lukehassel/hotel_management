@@ -1,0 +1,17 @@
+6.2.2021
+Morgens: Alex
+Mittags: Ben
+Nachmittags: Carl
+Abends: Dennis
+
+7.2.2021
+Morgens: Alex
+Mittags: Ben
+Nachmittags: Carl
+Abends: Dennis
+
+8.2.2021
+Morgens: Alex
+Mittags: Ben
+Nachmittags: Carl
+Abends: Dennis

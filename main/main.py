@@ -10,7 +10,7 @@ if __name__ == "__main__":
     root.title("Trash Hotel Administration System")
     main = StartPage(root)
     main.pack(side="top", fill="both", expand=True)
-    root.wm_geometry("450x400")
+    root.wm_geometry("500x450")
     root.mainloop()
 
 

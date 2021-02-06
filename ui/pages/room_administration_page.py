@@ -42,7 +42,7 @@ class RoomAdministrationPage(Page):
             else:
                 key = "Schlüssel beim besitzer"
 
-            list_widget.insert(i, str(customer.getCustomerId()) + "   " + key + "   " + "Raum " + str(
+            list_widget.insert(i,"Id: "+ str(customer.getCustomerId()) + "   " + key + "   " + "Raum " + str(
                 customer.getRoom().getRoomNumber()))
 
-        list_widget.place(x=20, y=160, width=400)
+        list_widget.place(x=20, y=200, width=430)

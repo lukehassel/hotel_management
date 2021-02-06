@@ -26,17 +26,14 @@ class CustomerAdministrationPage(Page):
 
     def refresh(self):
         self.list_widget.delete(0,'end')
-        for i, customer in enumerate(ReceptionUseCase().reservations):
-            self.list_widget.insert(i,
-                                    str(
-                                        customer.getCustomerId()) + "    " + customer.getName() + "    Noch nicht bezahlt.")
+        self.create_list()
 
     def create_list(self):
         self.list_widget = tk.Listbox(self)
 
         for i, customer in enumerate(ReceptionUseCase().reservations):
-            self.list_widget.insert(i,
+            self.list_widget.insert(i, "Id: "+
                                     str(
-                                        customer.getCustomerId()) + "    " + customer.getName() + "    Noch nicht bezahlt.")
+                                        customer.getCustomerId()) + "    Name: " + customer.getName() + "    Noch nicht bezahlt.")
 
-        self.list_widget.place(x=20, y=160, width=300)
+        self.list_widget.place(x=20, y=200, width=400)
